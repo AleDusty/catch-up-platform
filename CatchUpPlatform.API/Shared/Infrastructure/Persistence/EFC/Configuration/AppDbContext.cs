@@ -1,22 +1,1 @@
-using CatchUpPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
-using CatchUpPlatform.API.Shared.Infrastructure.Persistence.EFC.Interceptors;
-using Microsoft.EntityFrameworkCore;
-
-namespace CatchUpPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
-
-public class AppDbContext(DbContextOptions options) : DbContext(options)
-{
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.AddInterceptors(new AuditableEntityInterceptor());
-        base.OnConfiguring(optionsBuilder);
-    }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
-        //// Add Entities
-        //// End Add Entities
-        modelBuilder.UseSnakeCaseNamingConvention();
-    }
-}
+using CatchUpPlatform.API.News.Domain.Model.Aggregates;using CatchUpPlatform.API.News.Domain.Model.ValueObjects;using CatchUpPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;using CatchUpPlatform.API.Shared.Infrastructure.Persistence.EFC.Interceptors;using Microsoft.EntityFrameworkCore;namespace CatchUpPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;public class AppDbContext(DbContextOptions options) : DbContext(options){    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)    {        optionsBuilder.AddInterceptors(new AuditableEntityInterceptor());        base.OnConfiguring(optionsBuilder);    }    protected override void OnModelCreating(ModelBuilder modelBuilder)    {        base.OnModelCreating(modelBuilder);        //// Add Entities        modelBuilder.Entity<FavoriteSource>().HasKey(f => f.Id);        modelBuilder.Entity<FavoriteSource>().Property(f => f.Id).IsRequired().ValueGeneratedOnAdd();        modelBuilder.Entity<FavoriteSource>().Property(f => f.SourceId).            HasConversion(valueObject => valueObject.Value, value => new SourceId(value))            .IsRequired();        modelBuilder.Entity<FavoriteSource>().Property(f => f.NewsApiKey)            .HasConversion(valueObject => valueObject.Value, value => new NewsApiKey(value))            .IsRequired();        modelBuilder.Entity<FavoriteSource>().Property(f => f.NewsApiKey)            .IsUnicode();        //// End Add Entities        modelBuilder.UseSnakeCaseNamingConvention();    }}
