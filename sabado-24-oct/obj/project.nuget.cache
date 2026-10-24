@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "i8fKvwAE81I=",
+  "success": true,
+  "projectFilePath": "/Users/alumnos/development/2620/Dust/examen/sabado-24-oct/sabado-24-oct/sabado-24-oct.csproj",
+  "expectedPackageFiles": [
+    "/Users/alumnos/.nuget/packages/microsoft.aspnetcore.openapi/10.0.9/microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
+    "/Users/alumnos/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512",
+    "/Users/alumnos/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "projectPath": "/Users/alumnos/development/2620/Dust/examen/sabado-24-oct/sabado-24-oct/sabado-24-oct.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/alumnos/development/2620/Dust/examen/sabado-24-oct/sabado-24-oct/sabado-24-oct.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}
