@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
 namespace CatchUpPlatform.API.Shared.Interfaces.ASP.Configuration;
 
-public class KebabCAseRouteNamingConvention:IControllerModelConvention
+public class KebabCaseRouteNamingConvention:IControllerModelConvention
 {
     private static AttributeRouteModel? ReplaceControllerTemplate(SelectorModel selector, string name)
     {

@@ -8,11 +8,11 @@ public interface IAuditableEntity
     /// <summary>
     /// The date and time when the entity was created.
     /// </summary>
-    DateTimeOffset CreatedAt { get; set; }
+    DateTimeOffset? CreatedAt { get; set; }
 
 
     /// <summary>
     /// The date and time when the entity was last updated.
     /// </summary>
-    DateTimeOffset UpdatedAt { get; set; }
+    DateTimeOffset? UpdatedAt { get; set; }
 }
