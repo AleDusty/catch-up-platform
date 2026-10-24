@@ -20,8 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="News\Application\" />
-      <Folder Include="News\Infrastructure\Persistence\EFC\" />
+      <Folder Include="News\Application\Internal\QueryServices\" />
       <Folder Include="News\Interfaces\REST\" />
     </ItemGroup>
 
